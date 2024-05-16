@@ -31,5 +31,8 @@ def logout_view(request):
 def recuperacion(request):            
     return render(request, 'recuperacion.html')
 
+def platilla(request):            
+    return render(request, 'plantilla.html')
+
 def registro(request):            
     return render(request, 'registro.html')

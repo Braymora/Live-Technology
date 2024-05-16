@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/plantilla.css' %}">
+    
+    <!-- libreria de iconos boxicon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- libreria de google para el tipo de texto-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
+
+    <!-- favicon -->
+    <link rel="icon" href="/static/img/logo30años.jpg" type="image/x-icon">
+
+{% block css %}
+
+{% endblock %}
+    
+    <title>{% block title %}Tarificador{% endblock %}</title>
+</head>
+<body>
+    <div class="containertarifador" >
+        <div class="menu-dashboard open">
+            <div class="top-menu">
+                <div class="logo">
+                    <img src="{% static 'img/logo30años.jpg' %} " alt="">
+                    <span><img src="{% static 'img/logo-live-technology.png' %}" alt="logo-live-technology"></span>
+                </div>
+                <div class="toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </div>
+            <hr>
+            <div class="menu">
+
+                <a class="enlace" href="">
+                    <i class="bx bx-grid-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            
+                <a class="enlace" href="">
+                    <i class="bx bx-user"></i>
+                    <span>Gestión de Usuarios</span>
+                </a>
+
+                <a  class="enlace" href="">
+                    <i class='bx bx-file'></i>
+                    <span>Tarificador segun RR.HH.</span>
+                </a>
+
+                <a  class="enlace" href="">
+                    <i class='bx bx-file'></i>
+                    <span>Tarificador según días</span>
+                </a>
+    
+            </div>
+        </div>
+        <div class="menuUser">
+            <div class="contentperfil">
+                <img src="{% static 'img/logoUsuarioo.jpg' %}" alt="" class="imgperfil">
+            </div>
+                <nav>
+                    <ul>
+                        <li><a href="" style="color: black;" class="perfil">Perfil</a><i></i></li>
+                            <ul class="submenu">
+                            
+                                <li><a href="" class="textsubmenu"><i class='bx bx-exit'></i>Salir</a></li>
+                            
+                            </ul>
+                    </ul>
+                </nav>
+        </div>
+        <div class="contdatos">
+            
+            {% block content %}
+            
+            {% endblock %}
+
+        </div>
+    </div> 
+    
+    
+    <script src="{% static 'js/script.js' %}" defer></script>
+
+
+    {% block scripts %}
+
+    {% endblock %}
+</body>
+</html>

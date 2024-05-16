@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+    <title>index</title>
+
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="{% static 'img/logo-live-technology.png' %}" alt="logo-live-technology">
+        </div>
+        <nav>
+            <ul class="nav">
+                <li><a href="">Inicio</a></li>
+                <li><a href="#">Servicios</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Cursos</a></li>
+                        <li><a href="#">Ruta de aprendizaje</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Administración</a></li>
+                <li><a href="#">Acerca de</a></li>
+                <!-- Cambiado el enlace relativo a un enlace a la URL 'login' -->
+                {% if request.session.user_authenticated %}
+                    <li><a href="{% url 'logout' %}">Cerrar sesión</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                {% endif %}
+        </nav>
+    </header>
+
+    
+    <div class="main-content">
+        <h2>Bienvenidos a Live Technology</h2>
+        <h3>Descubre el producto que transformara tu vida profesional</h3>
+    </div>
+
+    <div class="container">
+        <h1>Mas de 50 cursos de tu interes</h1>
+        <h3>!!Hora de aprender lo que quieras!!</h3>
+    </div>
+
+    <div class="card-container">
+        <div class="card">
+            <a href="#">
+                <img src="{% static 'img/card1.png' %}" alt="Card Image 1">
+                <h3>Ruta</h3>
+            </a>    
+        </div>
+        <div class="card">
+            <a href="#">
+                <img src="{% static 'img/card2.png' %}" alt="Card Image 2">
+                <h3>Cursos</h3>
+            </a>
+        </div>
+        <div class="card">
+            <a href="#">
+                <img src="{% static 'img/card3.png' %}" alt="Card Image 3">
+                <h3>Certificaciones</h3>
+            </a>
+        </div>
+        <div class="card">
+            <a href="#">
+                <img src="{% static 'img/card4.png' %}" alt="Card Image 4">
+                <h3>Foro</h3>
+            </a>
+        </div>
+    </div>
+
+            <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <img src="{% static 'img/logo-live-technology.png' %}" alt="Live Technology Logo" class="footer-logo">
+                <p>
+                    Live Technology es una plataforma educativa dedicada a ofrecer cursos y recursos de aprendizaje en tecnología.
+                </p>
+
+                <div class="contact">
+                    <span><i class="fas fa-phone"></i> &nbsp; +123 456 789</span>
+                    <span><i class="fas fa-envelope"></i> &nbsp; info@livetechnology.com</span>
+                </div>
+
+                <div class="socials">
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <img src="{% static 'img/Facebook_Logo.png' %}" alt="Facebook">
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <img src="{% static 'img/X.png' %}" alt="Twitter"> 
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <img src="{% static 'img/Instagram.png' %}" alt="Instagram"> 
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <img src="{% static 'img/link.png' %}" alt="LinkedIn"> 
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-section links">
+                <h3>Enlaces útiles</h3>
+                <ul>
+                    <li><a href="{% url 'index' %}">Inicio</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Administración</a></li>
+                    <li><a href="#">Acerca de</a></li>
+                    <!-- Cambiado el enlace relativo a un enlace a la URL 'login' -->
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section resources">
+                <h3>Recursos</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Términos y condiciones</a></li>
+                    <li><a href="#">Política de privacidad</a></li>
+                    <li><a href="#">Soporte</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; 2024 Live Technology | Todos los derechos reservados.
+        </div>
+    </footer>
+
+</body>
+</html>

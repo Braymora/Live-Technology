@@ -24,7 +24,7 @@
 .logo img {
   margin-top: 10px;
   width: 180px;
-  height: 70px;
+  height: 80px;
 }
 
 /* Estilos para la navegación */
@@ -47,14 +47,14 @@
 }
 
 .nav a:hover {
-  color: #ffd700; /* Cambia el color al pasar el ratón sobre los enlaces */
+  color: #008dda; /* Cambia el color al pasar el ratón sobre los enlaces */
 }
 
 /* Estilos para el menú desplegable */
 .dropdown-menu {
   display: none;
   position: absolute;
-  background-color: #008dda;
+  background-color: white;
   list-style-type: none;
   padding: 10px;
   z-index: 100;

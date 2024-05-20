@@ -57,7 +57,7 @@ body{
 .top-menu .logo img {
     border-radius: 30px;
     transition: width .3s ease;
-    width: 110px;
+    width: 120px;
 }
 
 .top-menu .logo span {
@@ -103,7 +103,7 @@ hr {
     padding-top: 20px;
     position: relative;
     transition: all 0.8s ease;
-    width: 120px;
+    width: 180px;
     z-index: 1;
 }
 

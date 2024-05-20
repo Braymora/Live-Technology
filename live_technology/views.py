@@ -15,7 +15,7 @@ def login_view(request):
         if user:
             auth_login(request, user)
             request.session['user_authenticated'] = True  # Establecer la bandera en True
-            return redirect('index')
+            return redirect('cursos_virtuales')
         
         # Si el usuario no es válido, puedes renderizar nuevamente el formulario de login
         return render(request, 'login.html', {'error': 'Usuario o contraseña incorrectos'})
@@ -31,8 +31,11 @@ def logout_view(request):
 def recuperacion(request):            
     return render(request, 'recuperacion.html')
 
-def platilla(request):            
+def plantilla(request):            
     return render(request, 'plantilla.html')
 
 def registro(request):            
     return render(request, 'registro.html')
+
+def cursos_virtuales(request):
+    return render(request, 'cursos.html')

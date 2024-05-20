@@ -33,15 +33,15 @@
                     <img src="{% static 'img/logo-live-technology.png' %}" width="100px" alt="">
                 </div>
                 <div class="toggle">
-                    <i class='bx bx-menu'></i>
+                    <i class='bx bx-menu'></i> 
                 </div>
             </div>
             <hr>
             <div class="menu">
 
-                <a class="enlace" href="">
-                    <i class="bx bx-grid-alt"></i>
-                    <span>Dashboard</span>
+                <a class="enlace" href="{% url 'cursos_virtuales' %}">
+                    <i class='bx bxs-home'></i>
+                    <span>Inicio</span>
                 </a>
             
                 <a class="enlace" href="">
@@ -50,13 +50,13 @@
                 </a>
 
                 <a  class="enlace" href="">
-                    <i class='bx bx-file'></i>
-                    <span>Tarificador segun RR.HH.</span>
+                    <i class='bx bx-desktop'></i>
+                    <span>Mis Cursos</span>
                 </a>
 
                 <a  class="enlace" href="">
-                    <i class='bx bx-file'></i>
-                    <span>Tarificador según días</span>
+                    <i class='bx bx-code-alt'></i>
+                    <span>Ruta de Aprendizaje</span>
                 </a>
     
             </div>
@@ -66,7 +66,11 @@
             </div>
                 <nav>
                     <ul>
-                        <li><a href="" style="color: black;" class="perfil">Perfil</a><i></i></li>
+                        <li>
+                            <a href="" style="color: black;" class="perfil">
+                                <i class='bx bx-user'></i> Perfil
+                            </a>
+                        </li>
                             <ul class="submenu">
                             
                                 <li><a href="" class="textsubmenu"><i class='bx bx-exit'></i>Salir</a></li>

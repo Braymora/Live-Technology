@@ -1,0 +1,37 @@
+{% extends 'plantilla.html' %}
+{% load static %}
+{% block title %}Ofertas de Cursos Virtuales{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/cards.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1>Ofertas de Cursos Virtuales</h1>
+<div class="cursos-container">
+    <div class="curso-item">
+        <div class="curso-video">
+            <iframe id="youtube-video" title="Curso 1" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="curso-card">
+            <img src="{% static 'img/codigo1.jpg' %}" alt="Curso Imagen">
+            <div class="curso-info">
+                <h3>Curso de Python</h3>
+                <p>Aprende Python desde cero con este curso.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var videoId = 'dCl4Fwr_9oI';
+        var iframe = document.getElementById('youtube-video');
+        iframe.src = "https://www.youtube.com/embed/" + videoId;
+    });
+</script>
+{% endblock %}
+
+

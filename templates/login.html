@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="{% static 'css/login.css' %}" />
     <link rel="stylesheet" href="{% static 'css/fondo.css' %}" />
     <script
@@ -102,7 +103,13 @@
 
             <div class="input-content">
               <i class="fa-solid fa-envelope"></i>
-              <input type="text" id="username" name="username" placeholder="" required/>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder=""
+                required
+              />
               <label for="#">Email o usuario</label>
             </div>
 
@@ -132,5 +139,32 @@
         </div>
       </div>
     </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Función para mostrar la alerta emergente
+        function mostrarAlerta(mensaje) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: mensaje,
+            timer: 3000,
+            showConfirmButton: false
+          });
+        }
+
+        // Obtener el mensaje de error desde el contexto de Django
+        var mensajes = [];
+        {% if messages %}
+          {% for message in messages %}
+            mensajes.push("{{ message }}");
+          {% endfor %}
+        {% endif %}
+
+        mensajes.forEach(function (mensaje) {
+          mostrarAlerta(mensaje);
+        });
+      });
+    </script>
   </body>
 </html>

@@ -50,6 +50,17 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# Asegúrate de tener esta configuración para mensajes
+from django.contrib.messages import constants as messages
+
+MESSAGE_TAGS = {
+    messages.DEBUG: 'debug',
+    messages.INFO: 'info',
+    messages.SUCCESS: 'success',
+    messages.WARNING: 'warning',
+    messages.ERROR: 'error',
+}
+
 ROOT_URLCONF = 'live_technology.urls'
 
 TEMPLATES = [
@@ -125,3 +136,12 @@ STATICFILES_DIRS = (
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# URL a la que se redirige después de un inicio de sesión exitoso
+LOGIN_REDIRECT_URL = 'cursos_virtuales'  # Cambia 'home' por el nombre de la URL a la que deseas redirigir tras el login
+
+# URL a la que se redirige después de cerrar la sesión
+LOGOUT_REDIRECT_URL = 'login'  # Cambia 'login' por el nombre de la URL de tu vista de inicio de sesión
+
+# URL de la página de inicio de sesión
+LOGIN_URL = 'login'  # Cambia 'login' por el nombre de la URL de tu vista de inicio de sesión

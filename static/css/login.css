@@ -149,3 +149,39 @@ button:hover {
 .registrar p a:hover {
     text-decoration: underline;
 }
+
+/* Agrega esto a tu archivo login.css */
+
+ul.messages {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    width: 100%;
+    text-align: center;
+}
+
+ul.messages li {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 14px;
+}
+
+ul.messages li.error {
+    background-color: #f44336; /* Rojo */
+}
+
+ul.messages li.success {
+    background-color: #4caf50; /* Verde */
+}
+
+ul.messages li.info {
+    background-color: #2196f3; /* Azul */
+}
+
+ul.messages li.warning {
+    background-color: #ff9800; /* Naranja */
+}
+
+

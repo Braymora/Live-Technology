@@ -1,0 +1,76 @@
+{% extends 'plantilla.html' %}
+{% load static %}
+{% block title %}Ofertas de Cursos Virtuales{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/cards.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="main-content " >
+    <img src="{% static 'img/live.png' %}" style="width: 100%; display: flex; padding: 20px;" alt="">
+</div>
+
+<h2>Mis cursos</h2>
+
+<hr>
+
+<div class="promociones-container">
+    <div class="promocion-card">
+        <img src="{% static 'img/imagen1.jpg' %}" alt="Curso 2 Imagen">
+        <div class="promocion-info">
+            <h3>Curso de JavaScript</h3>
+            <p>Domina JavaScript y crea aplicaciones web interactivas.</p>
+        </div>
+    </div>
+    <div class="promocion-card">
+        <img src="{% static 'img/imagen4.jpg' %}" alt="Curso 3 Imagen">
+        <div class="promocion-info">
+            <h3>Curso de Data Science</h3>
+            <p>Explora el mundo de los datos y aprende a analizarlos.</p>
+        </div>
+    </div>
+    <div class="promocion-card">
+        <img src="{% static 'img/imagen3.jpg' %}" alt="Curso 4 Imagen">
+        <div class="promocion-info">
+            <h3>Curso de PHP</h3>
+            <p>Desarrolla aplicaciones web dinámicas con PHP.</p>
+        </div>
+    </div>
+    <div class="promocion-card">
+        <img src="{% static 'img/imagen2.jpg' %}" alt="Curso 4 Imagen">
+        <div class="promocion-info">
+            <h3>Curso de MHTML 5 y CSS</h3>
+            <p>Aprende a construir codigo con HTML y CSS.</p>
+        </div>
+    </div>
+    <div class="promocion-card">
+        <img src="{% static 'img/imagen5.jpg' %}" alt="Curso 6 Imagen">
+        <div class="promocion-info">
+            <h3>Curso de Enfermería</h3>
+            <p>Capacítate en el área de la salud con este curso de enfermería.</p>
+        </div>
+    </div>
+    <div class="promocion-card">
+        <img src="{% static 'img/imagen6.jpg' %}" alt="Curso 7 Imagen">
+        <div class="promocion-info">
+            <h3>Curso de Bases de Datos</h3>
+            <p>Aprende a diseñar y gestionar bases de datos eficientemente.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var videoId = 'dCl4Fwr_9oI';
+        var iframe = document.getElementById('youtube-video');
+        iframe.src = "https://www.youtube.com/embed/" + videoId;
+    });
+</script>
+{% endblock %}
+
+

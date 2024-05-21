@@ -25,9 +25,9 @@
                 <li><a href="#">Administración</a></li>
                 <li><a href="#">Acerca de</a></li>
                 <!-- Cambiado el enlace relativo a un enlace a la URL 'login' -->
-                {% if request.session.user_authenticated %}
-                    <a href="{% url 'login' %}">Login</a>
-                {% endif %}
+                <li></li><a href="{% url 'login' %}">Login</a></li>
+
+                    
         </nav>
     </header>
 

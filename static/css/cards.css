@@ -8,10 +8,15 @@ body {
     flex-direction: column;
 }
 
+hr{
+    color: gray;
+    margin: 20px;
+}
+
 /*Estilos para el titulo */
 
-h1 {
-    margin: 10px;
+h2 {
+    margin: 20px;
 }
 
 /*Estilos para los cards */
@@ -26,6 +31,7 @@ h1 {
     display: flex;
     flex-direction: row;
     gap: 20px;
+    width: 100%;
 }
 
 .curso-video iframe {

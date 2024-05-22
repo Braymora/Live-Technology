@@ -36,6 +36,7 @@ body{
 	gap: 0;
     height: 100%;
 	width: 100%;
+    background: white;
 }
 
 /*MENU DEL DASHBOARD*/
@@ -132,7 +133,7 @@ hr {
 }
 
 .menu .enlace i {
-    font-size: 38px;
+    font-size: 30px;
     padding: 8px;
     color: black;
 }
@@ -169,11 +170,12 @@ hr {
 
 /*MENU PERFIL USUARIO*/
 .menuUser{
-    background: linear-gradient(to bottom right, #270270, #00CAD1);
+    background: linear-gradient(to bottom right,#1B233D, #049FBB, #50F6FF);
     box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
     grid-area: 1 / 2 / 1 / 13;
     height: 80px;
     border-radius: 10px;
+    margin: 5px;
 }
 
 .contentperfil{
@@ -264,6 +266,9 @@ nav:hover .submenu {
     color: #080d28;
 	grid-area: 2 / 2 / 13 / 13;
     overflow-y: scroll;
+    position: relative;
+    top: 0rem;
+    margin-bottom: 2rem;
 }
 
 /*Responsive a 600px*/

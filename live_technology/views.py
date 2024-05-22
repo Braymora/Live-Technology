@@ -49,3 +49,6 @@ def cursos_virtuales(request):
 @login_required
 def mis_cursos(request):
     return render(request, 'miscursos.html')
+
+def about(request):
+    return render(request, 'about.html')

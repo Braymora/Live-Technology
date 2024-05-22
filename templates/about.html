@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/about.css' %}"> 
+    <title>index</title>
+
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="{% static 'img/logo-live-technology.png' %}" alt="logo-live-technology">
+        </div>
+        <nav>
+            <ul class="nav">
+                <li><a href="{% url 'index' %}">Inicio</a></li>
+                <li><a href="#">Servicios</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Cursos</a></li>
+                        <li><a href="#">Ruta de aprendizaje</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Administración</a></li>
+                <li><a href="{% url 'about' %}">Acerca de</a></li>
+                <!-- Cambiado el enlace relativo a un enlace a la URL 'login' -->
+                <li></li><a href="{% url 'login' %}">Login</a></li>
+
+                    
+        </nav>
+    </header>
+
+    <main>
+      <section class="about">
+        <div class="contenedor">
+          <h1>Acerca de Nosotros</h1>
+          <p>
+            En Live Technology, estamos dedicados a ofrecer cursos virtuales de alta calidad para ayudarte a mejorar tus habilidades y conocimientos en diversas áreas de la tecnología. Nuestro objetivo es proporcionar una plataforma accesible y efectiva para el aprendizaje en línea.
+          </p>
+          <h2>Nuestra Misión</h2>
+          <p>
+            Nuestra misión es empoderar a los estudiantes y profesionales mediante el acceso a la educación de alta calidad, permitiéndoles alcanzar sus metas personales y profesionales.
+          </p>
+          <h2>Nuestra Historia</h2>
+          <p>
+            Fundada en 2020, Live Technology nació con la visión de revolucionar la educación en línea. Desde nuestros humildes comienzos, hemos crecido hasta convertirnos en una plataforma de confianza para miles de estudiantes en todo el mundo.
+          </p>
+        </div>
+      </section>
+    
+      <section class="features">
+        <div class="contenedor">
+          <h2>¿Qué Ofrecemos?</h2>
+          <div class="feature-items">
+            <div class="feature-item">
+              <img src="{% static 'img/about1.jpg' %}" alt="Cursos Interactivos">
+              <h3>Cursos Interactivos</h3>
+              <p>Clases dinámicas y prácticas para asegurar un aprendizaje efectivo y atractivo.</p>
+            </div>
+            <div class="feature-item">
+              <img src="{% static 'img/about2.jpg' %}" alt="Instructores Expertos">
+              <h3>Instructores Expertos</h3>
+              <p>Profesionales altamente calificados con experiencia en el campo de la tecnología y la educación.</p>
+            </div>
+            <div class="feature-item">
+              <img src="{% static 'img/about3.jpg' %}" alt="Certificaciones">
+              <h3>Certificaciones</h3>
+              <p>Certificados de finalización que validan tus conocimientos y habilidades adquiridas.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+      <section class="values">
+        <div class="contenedor">
+          <h2>Nuestros Valores</h2>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Compromiso con la calidad</li>
+            <li><i class="fa-solid fa-check"></i> Accesibilidad para todos</li>
+            <li><i class="fa-solid fa-check"></i> Innovación constante</li>
+            <li><i class="fa-solid fa-check"></i> Integridad y transparencia</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+            <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <img src="{% static 'img/logo-live-technology.png' %}" alt="Live Technology Logo" class="footer-logo">
+                <p>
+                    Live Technology es una plataforma educativa dedicada a ofrecer cursos y recursos de aprendizaje en tecnología.
+                </p>
+
+                <div class="contact">
+                    <span><i class="fas fa-phone"></i> &nbsp; +123 456 789</span>
+                    <span><i class="fas fa-envelope"></i> &nbsp; info@livetechnology.com</span>
+                </div>
+
+                <div class="socials">
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <img src="{% static 'img/Facebook_Logo.png' %}" alt="Facebook">
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <img src="{% static 'img/X.png' %}" alt="Twitter"> 
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <img src="{% static 'img/Instagram.png' %}" alt="Instagram"> 
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <img src="{% static 'img/link.png' %}" alt="LinkedIn"> 
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-section links">
+                <h3>Enlaces útiles</h3>
+                <ul>
+                    <li><a href="{% url 'index' %}">Inicio</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Administración</a></li>
+                    <li><a href="#">Acerca de</a></li>
+                    <!-- Cambiado el enlace relativo a un enlace a la URL 'login' -->
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section resources">
+                <h3>Recursos</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Términos y condiciones</a></li>
+                    <li><a href="#">Política de privacidad</a></li>
+                    <li><a href="#">Soporte</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; 2024 Live Technology | Todos los derechos reservados.
+        </div>
+    </footer>
+
+</body>
+</html>

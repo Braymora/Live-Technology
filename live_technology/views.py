@@ -45,3 +45,7 @@ def registro(request):
 @login_required
 def cursos_virtuales(request):
     return render(request, 'cursos.html')
+
+@login_required
+def mis_cursos(request):
+    return render(request, 'miscursos.html')

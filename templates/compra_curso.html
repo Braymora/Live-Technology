@@ -1,0 +1,56 @@
+{% extends 'plantilla.html' %}
+{% load static %}
+
+{% block title %}Comprar Curso - {{ curso.nombre }}{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/compra_curso.css' %}">
+{% endblock %}
+
+{% block content %}
+{% for cursito in cursito  %}
+    <h1>Comprar Curso - {{ cursito.nombre }}</h1>
+{% endfor %}
+
+<div class="curso-detalle">
+    <div class="curso-info">
+        {% for cursito in cursito  %}
+            <h2>{{ cursito.nombre }}</h2>
+            <p>{{ cursito.descripcion }}</p>
+            <p>Precio: ${{ cursito.precio }}</p>
+        {% endfor %}
+    </div>
+</div>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="curso_id" value="{{ curso.id_curso }}">
+    <div class="form-group">
+        <label for="nombre">Nombre Completo</label>
+        <input type="text" id="nombre" name="nombre" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Correo Electrónico</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+        <label for="tarjeta">Número de Tarjeta</label>
+        <input type="text" id="tarjeta" name="tarjeta" required>
+    </div>
+    <div class="form-group">
+        <label for="caducidad">Fecha de Caducidad (MM/YY)</label>
+        <input type="text" id="caducidad" name="caducidad" placeholder="MM/YY" required>
+    </div>
+    <div class="form-group">
+        <label for="cvv">CVV</label>
+        <input type="text" id="cvv" name="cvv" required>
+    </div>
+    <button type="submit">Comprar Ahora</button>
+</form>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Aquí puedes agregar cualquier script adicional necesario para la página de compra del curso
+</script>
+{% endblock %}

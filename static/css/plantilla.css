@@ -98,7 +98,7 @@ hr {
 
 .menu-dashboard{
     background: #F2F2F2;
-    height: 100vh;
+    height: auto;
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 20px;

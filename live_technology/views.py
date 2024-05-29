@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login as auth_login, logout
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from live.models import *
 
 def index(request):            
     return render(request, 'index.html')
@@ -44,11 +45,20 @@ def registro(request):
 
 @login_required
 def cursos_virtuales(request):
-    return render(request, 'cursos.html')
+    cursito = Cursos.objects.all()
+
+    return render(request, 'cursos.html',{'cursito':cursito})
 
 @login_required
 def mis_cursos(request):
+
     return render(request, 'miscursos.html')
+
+@login_required
+def compracurso(request):
+    
+
+    return render(request, 'compra_curso.html')
 
 def about(request):
     return render(request, 'about.html')

@@ -21,7 +21,7 @@
 {% for cursito in cursito  %}
 <div class="curso-card" data-nombre="{{ cursito.nombre }}" data-descripcion="{{ cursito.descripcion }}">
     <a href="{% url 'compracurso' %}">
-    <img src="{% static 'img/codigo1.jpg' %}" alt="Curso Imagen">
+    <img src="{{ cursito.imagen }}" alt="Curso Imagen">
     <div class="curso-info">
         <h3>{{ cursito.nombre }}</h3>
         <p>{{ cursito.descripcion }}</p>

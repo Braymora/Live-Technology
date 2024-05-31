@@ -106,6 +106,7 @@ hr {
     transition: all 0.8s ease;
     width: 180px;
     z-index: 1;
+    height: 100vh;
 }
 
 .menu-dashboard.open{

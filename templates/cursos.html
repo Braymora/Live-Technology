@@ -7,7 +7,10 @@
 {% endblock %}
 
 {% block content %}
-<h1>Ofertas de Cursos Virtuales</h1>
+
+<h2>Ofertas de Cursos Virtuales</h2>
+
+<hr class="linea">
 
 
 <div class="cursos-container">
@@ -18,64 +21,21 @@
     </div>
 </div>
 
-{% for cursito in cursito  %}
-<div class="curso-card" data-nombre="{{ cursito.nombre }}" data-descripcion="{{ cursito.descripcion }}">
-    <a href="{% url 'compracurso' %}">
-    <img src="{{ cursito.imagen }}" alt="Curso Imagen">
-    <div class="curso-info">
-        <h3>{{ cursito.nombre }}</h3>
-        <p>{{ cursito.descripcion }}</p>
-    </div>
-    </a>
+<div class="content-cards">
+    {% for cursito in cursito  %}
+        <div class="curso-card" data-nombre="{{ cursito.nombre }}" data-descripcion="{{ cursito.descripcion }}">
+            <a href="{% url 'compracurso' %}">
+            <img src="{{ cursito.imagen }}" alt="Curso Imagen">
+            <div class="curso-info">
+                <h3>{{ cursito.nombre }}</h3>
+                <p>{{ cursito.descripcion }}</p>
+            </div>
+            </a>
+        </div>
+    {% endfor %}
 </div>
-{% endfor %}
 
-<div class="promociones-container">
-    <div class="promocion-card">
-        <a href="{% url 'compracurso' %}">
-        <img src="{% static 'img/imagen1.jpg' %}" alt="Curso 2 Imagen">
-        </a>    
-        <div class="promocion-info">
-            <h3>Curso de JavaScript</h3>
-            <p>Domina JavaScript y crea aplicaciones web interactivas.</p>
-        </div>
-    </div>
-    <div class="promocion-card">
-        <img src="{% static 'img/imagen4.jpg' %}" alt="Curso 3 Imagen">
-        <div class="promocion-info">
-            <h3>Curso de Data Science</h3>
-            <p>Explora el mundo de los datos y aprende a analizarlos.</p>
-        </div>
-    </div>
-    <div class="promocion-card">
-        <img src="{% static 'img/imagen3.jpg' %}" alt="Curso 4 Imagen">
-        <div class="promocion-info">
-            <h3>Curso de PHP</h3>
-            <p>Desarrolla aplicaciones web dinámicas con PHP.</p>
-        </div>
-    </div>
-    <div class="promocion-card">
-        <img src="{% static 'img/imagen2.jpg' %}" alt="Curso 4 Imagen">
-        <div class="promocion-info">
-            <h3>Curso de MHTML 5 y CSS</h3>
-            <p>Aprende a construir codigo con HTML y CSS.</p>
-        </div>
-    </div>
-    <div class="promocion-card">
-        <img src="{% static 'img/imagen5.jpg' %}" alt="Curso 6 Imagen">
-        <div class="promocion-info">
-            <h3>Curso de Enfermería</h3>
-            <p>Capacítate en el área de la salud con este curso de enfermería.</p>
-        </div>
-    </div>
-    <div class="promocion-card">
-        <img src="{% static 'img/imagen6.jpg' %}" alt="Curso 7 Imagen">
-        <div class="promocion-info">
-            <h3>Curso de Bases de Datos</h3>
-            <p>Aprende a diseñar y gestionar bases de datos eficientemente.</p>
-        </div>
-    </div>
-</div>
+
 {% endblock %}
 
 {% block scripts %}

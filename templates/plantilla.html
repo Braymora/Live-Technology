@@ -26,14 +26,13 @@
     <title>{% block title %}Tarificador{% endblock %}</title>
 </head>
 <body>
+
+    <!--contenedor de la barra lateral inicio-->
     <div class="containertarifador" >
         <div class="menu-dashboard open">
             <div class="top-menu">
                 <div class="logo">
                     <img src="{% static 'img/logo-live-technology.png' %}" width="100px" alt="">
-                </div>
-                <div class="toggle">
-                    <i class='bx bx-menu'></i> 
                 </div>
             </div>
             <hr>
@@ -61,9 +60,18 @@
     
             </div>
         </div>
+        <!--contenedor de la barra lateral fin-->
+
+        <!--contenedor de la barra superior de la plantilla inicio-->
         <div class="menuUser">
+            <div class="content-buton-close">
+
+            </div>
             <div class="contentperfil">
             </div>
+                <div class="toggle content-close">
+                    <i class='bx bx-menu'></i> 
+                </div>
                 <nav>
                     <ul>
                         <li>
@@ -78,8 +86,13 @@
                             </ul>
                     </ul>
                 </nav>
-                <i class='bx bx-cart'></i>
+                <div class="content-car">
+                    <i class='bx bx-cart'></i>
+                </div>
         </div>
+        <!--contenedor de la barra superior de la plantilla fin-->
+
+        <!--contenedor principal que maneja el contenido que cambia dentro de la plantilla  inicio-->   
         <div class="contdatos">
             
             {% block content %}
@@ -87,6 +100,7 @@
             {% endblock %}
 
         </div>
+        <!--contenedor principal que maneja el contenido que cambia dentro de la plantilla  fin-->   
     </div> 
     
     

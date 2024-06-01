@@ -104,9 +104,10 @@ hr {
     padding-top: 20px;
     position: relative;
     transition: all 0.8s ease;
-    width: 180px;
+    width: 150px;
     z-index: 1;
     height: 100vh;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 .menu-dashboard.open{
@@ -128,7 +129,7 @@ hr {
 }
 
 .menu .enlace:hover {
-    background: var(--blue-bayoux-100);
+    background: linear-gradient(to bottom right,#1B233D, #049FBB, #50F6FF);
     border-radius: 4px;
     color: black;
 }
@@ -172,11 +173,27 @@ hr {
 /*MENU PERFIL USUARIO*/
 .menuUser{
     background: linear-gradient(to bottom right,#1B233D, #049FBB, #50F6FF);
-    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     grid-area: 1 / 2 / 1 / 13;
     height: 80px;
     border-radius: 10px;
     margin: 5px;
+    display: flex;
+}
+
+.content-close{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+    padding: 1rem;
+}
+
+.bx-menu{
+    position: relative;
+    justify-content: flex-start;
+    font-size: 40px;
+    display: grid;
 }
 
 .contentperfil{
@@ -185,15 +202,21 @@ hr {
     right: 200px;
 }
 
+.content-car{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    padding: 2rem;
+  }
+
 .bx-cart{
-    top: 20px;
-    position: absolute;
-    font-size: 35px;
-    right: 50px;
+    position: relative;
+    justify-content: flex-end;
+    font-size: 40px;
 }
 
 nav{
-    height: 100%;
     margin-top: 30px;
     position: absolute;
     right: 120px;
@@ -253,7 +276,7 @@ nav:hover .submenu {
 }
 
 .textsubmenu:hover{
-    background: var(--blue-bayoux-700);
+    background: linear-gradient(to bottom right,#1B233D, #049FBB, #50F6FF);
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
     color: white;
     font-size: 16px;
@@ -269,7 +292,6 @@ nav:hover .submenu {
     overflow-y: scroll;
     position: relative;
     top: 0rem;
-    margin-bottom: 2rem;
 }
 
 /*Responsive a 600px*/

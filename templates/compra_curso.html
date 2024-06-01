@@ -12,9 +12,14 @@
     <h1>Comprar Curso - {{ cursito.nombre }}</h1>
 {% endfor %}
 
+<div id="curso-seleccionado">
+    <!-- La información del curso se mostrará aquí -->
+</div>
+
 <div class="curso-detalle">
     <div class="curso-info">
         {% for cursito in cursito  %}
+        <img src="{{ cursito.imagen }}" alt="Curso Imagen">
             <h2>{{ cursito.nombre }}</h2>
             <p>{{ cursito.descripcion }}</p>
             <p>Precio: ${{ cursito.precio }}</p>
@@ -51,6 +56,36 @@
 
 {% block scripts %}
 <script>
-    // Aquí puedes agregar cualquier script adicional necesario para la página de compra del curso
+document.addEventListener("DOMContentLoaded", function() {
+    // Obtener el contenedor donde se mostrará la información del curso
+    const contenedorCurso = document.getElementById('curso-seleccionado');
+
+    // Obtener cada dato del curso del localStorage
+    const nombre = localStorage.getItem('cursoNombre');
+    const descripcion = localStorage.getItem('cursoDescripcion');
+    const imagen = localStorage.getItem('cursoImagen');
+
+    // Verificar si hay información del curso en el localStorage
+    if (nombre && descripcion && imagen) {
+        // Crear el contenido HTML con la información del curso
+        const cursoHTML = `
+            <div class="curso-card">
+                <img src="${imagen}" alt="Curso Imagen">
+                <div class="curso-info">
+                    <h3>${nombre}</h3>
+                    <p>${descripcion}</p>
+                </div>
+                </a>
+            </div>
+        `;
+
+        // Insertar el contenido HTML en el contenedor
+        contenedorCurso.innerHTML = cursoHTML;
+    } else {
+        // Mostrar un mensaje si no hay información del curso en el localStorage
+        contenedorCurso.innerHTML = '<p>No hay curso seleccionado.</p>';
+    }
+});
+
 </script>
 {% endblock %}

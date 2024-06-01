@@ -2,14 +2,6 @@
 
 /* compra_curso.css */
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 20px;
-    overflow-y: auto; /* Se muestra la barra de desplazamiento vertical si es necesario */
-}
-
 h1 {
     text-align: center;
     color: #333;
@@ -92,4 +84,38 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
     background-color: #0056b3;
+}
+
+/* estilos para la tarjeta*/
+.curso-card {
+    align-items: center;
+    width: 350px;
+    height: 350px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    margin: 10px
+}
+
+.curso-card img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+}
+
+.curso-info {
+    padding: 10px;
+    text-align: center;
+}
+
+.curso-info h3 {
+    margin: 10px 0;
+    font-size: 24px;
+    color: black;
+}
+
+.curso-info p {
+    font-size: 16px;
+    color: #555;
 }

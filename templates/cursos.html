@@ -22,7 +22,7 @@
 </div>
 
 <div class="content-cards">
-    {% for cursito in cursito  %}
+    {% for cursito in cursito %}
         <div class="curso-card" data-nombre="{{ cursito.nombre }}" data-descripcion="{{ cursito.descripcion }}">
             <a href="{% url 'compracurso' %}">
             <img src="{{ cursito.imagen }}" alt="Curso Imagen">
@@ -34,6 +34,7 @@
         </div>
     {% endfor %}
 </div>
+
 
 
 {% endblock %}
@@ -48,17 +49,26 @@
 </script>
 
 <script>
-    var cursoCards = document.querySelectorAll('.curso-card');
-    cursoCards.forEach(function(cursoCard) {
-        cursoCard.addEventListener('click', function() {
-            var nombre = this.getAttribute('data-nombre');
-            var descripcion = this.getAttribute('data-descripcion');
-            var contenido = nombre + ' - ' + descripcion;
-            localStorage.setItem('contenidoTarjeta', contenido);
-            alert('Contenido de la tarjeta guardado en Local Storage.');
+    document.addEventListener("DOMContentLoaded", function() {
+        // Selecciona todos los elementos de curso
+        const cursos = document.querySelectorAll('.curso-card');
+    
+        // Añade un evento de clic a cada tarjeta de curso
+        cursos.forEach(curso => {
+            curso.addEventListener('click', function() {
+                const nombre = curso.getAttribute('data-nombre');
+                const descripcion = curso.getAttribute('data-descripcion');
+                const imagen = curso.querySelector('img').getAttribute('src');
+    
+                // Almacena cada dato en el localStorage con claves separadas
+                localStorage.setItem('cursoNombre', nombre);
+                localStorage.setItem('cursoDescripcion', descripcion);
+                localStorage.setItem('cursoImagen', imagen);
+            });
         });
     });
-</script>
+    </script>
+    
 {% endblock %}
 
 

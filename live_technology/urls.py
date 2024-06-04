@@ -1,17 +1,18 @@
 from django.contrib import admin
-from django.urls import path
-from . import views
+from django.urls import path,include
+from . views import*
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('login/', views.login_view, name='login'),
-    path('logout/', views.logout_view, name='logout'),
-    path('recuperacion/', views.recuperacion, name='recuperacion'),
-    path('plantilla/', views.plantilla, name='plantilla'),
-    path('registro/', views.registro, name='registro'),
+    path('', index, name='index'),
+    path('login/', login_view, name='login'),
+    path('logout/', logout_view, name='logout'),
+    path('recuperacion/', recuperacion, name='recuperacion'),
+    path('plantilla/', plantilla, name='plantilla'),
+    path('registro/', registro, name='registro'),
     path('admin/', admin.site.urls),
-    path('cursos_virtuales/', views.cursos_virtuales, name='cursos_virtuales'),
-    path('mis_cursos/', views.mis_cursos, name='mis_cursos'),
-    path('compra/curso/', views.compracurso, name='compracurso'),
-    path('about/', views.about, name='about')
+    path('cursos_virtuales/', cursos_virtuales, name='cursos_virtuales'),
+    path('mis_cursos/', mis_cursos, name='mis_cursos'),
+    path('compra/curso/', compracurso, name='compracurso'),
+    path('about/', about, name='about'),
+    path('live/', include('live.urls')),
 ]

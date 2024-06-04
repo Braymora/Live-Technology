@@ -1,0 +1,128 @@
+:root {
+    --blue-bayoux-50: #f5f8fa;
+    --blue-bayoux-100: #e9eff5;
+    --blue-bayoux-200: #cfdde8;
+    --blue-bayoux-600: #3b6381;
+    --blue-bayoux-700: #345670;
+    --blue-bayoux-800: #0b3d93;
+    --blue-bayoux-900: #122754;
+    --blue-bayoux-950: #080d28;    
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    align-items: center;
+    background: var(--blue-bayoux-100);
+    display: flex;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+h1{
+    color: black;
+    font-family: "Protest Strike", sans-serif;
+    text-align: center;
+}
+
+.container {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 15px; /* Reducir el padding */
+    position: relative;
+    max-width: 600px; /* Reducir el ancho máximo */
+    width: 100%;
+    margin: 20px auto; /* Añadir espacio entre la tarjeta y el encabezado y centrar */
+}
+
+.container header {
+    color: var(--blue-bayoux-800);
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px; /* Añadir espacio entre el encabezado y la tarjeta */
+}
+
+.container .form {
+    text-align: left; /* Alinear el contenido del formulario a la izquierda */
+    margin-top: 20px;
+}
+
+.form .form-group {
+    display: flex; /* Usar flexbox para alinear los elementos */
+    align-items: center; /* Alinear verticalmente los elementos */
+    margin-bottom: 15px; /* Añadir espacio entre los grupos de campos */
+}
+
+.form .form-label {
+    color: black; /* Cambiar el color de las etiquetas a negro */
+    font-size: 1.2rem; /* Aumentar el tamaño de las etiquetas */
+    margin-right: 10px; /* Añadir espacio entre la etiqueta y el input */
+    width: 30%; /* Establecer un ancho fijo para las etiquetas */
+    text-align: right; /* Alinear las etiquetas a la derecha */
+}
+
+.form .form-control {
+    border: 1px solid var(--blue-bayoux-700);
+    border-radius: 6px;
+    color: black; /* Cambiar el color de las letras a negro */
+    font-size: 1rem; /* Reducir el tamaño de las letras */
+    height: 35px; /* Reducir la altura de los inputs */
+    padding: 0 10px;
+    margin-right: 10px; /* Añadir espacio entre los inputs */
+}
+
+.form .form-control:focus {
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.form button {
+    background: var(--blue-bayoux-700);
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2rem; /* Aumentar el tamaño del texto del botón */
+    font-weight: 400;
+    margin-top: 30px;
+    padding: 14px 100px; /* Aumentar el tamaño del botón */
+    transition: all 0.2s ease;
+    display: block; /* Hacer que el botón sea un bloque para centrarlo */
+    margin: 0 auto; /* Centrar el botón */
+}
+
+.form button:hover {
+    background: var(--blue-bayoux-800);
+}
+
+.message {
+    background-color: #f44336;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    display: none;
+}
+
+.modal-header {
+    background-color: var(--blue-bayoux-200);
+    color: var(--blue-bayoux-800);
+    border-bottom: 1px solid var(--blue-bayoux-600);
+}
+
+.modal-footer {
+    background-color: var(--blue-bayoux-200);
+    border-top: 1px solid var(--blue-bayoux-600);
+}
+
+.modal-body {
+    color: var(--blue-bayoux-700);
+}

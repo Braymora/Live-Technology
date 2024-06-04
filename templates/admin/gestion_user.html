@@ -1,0 +1,177 @@
+{% extends 'plantilla.html' %}
+{% load static %}
+
+{% block css %}
+
+    <link rel="stylesheet" href="{% static 'css/gestion_user.css' %}">
+
+    <!-- libreria de iconos boxicon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- libreria de google para el tipo de texto-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="contenedor">
+        <h1>Gestión de Usuarios</h1>
+        <div class="buscador">
+            <input type="text" id="input-busqueda" placeholder="Buscar usuario...">
+            <button onclick="buscar()" class="buscador-btn">Buscar</button> <!-- Aquí se llama a la función buscar -->
+            <div class="add-user">
+                <a href="{% url 'crear_usuario' %}">
+                    <button class="add-user-btn"><i class='bx bx-user'></i>Añadir Usuario</button>
+                </a>                
+            </div>        
+        </div>
+        <div class="tablecontain">
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">usuario</th>
+                        <th style="width: 25%;">Nombre</th>
+                        <th style="width: 25%;">Apellido</th>
+                        <th style="width: 25%;">Tipo de Usuario</th>
+                        <th style="width: 25%;">Correo Electrónico</th>
+                        <th style="width: 15%;">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    <tr>
+                        <td class="info">{{ user.username }}</td>
+                        <td class="info">{{ user.first_name }}</td>
+                        <td class="info">{{ user.last_name }}</td>
+                        <td class="info">
+                            {% if user.is_staff %}
+                                Administrador
+                            {% else %}
+                                Normal
+                            {% endif %}
+                        </td>
+                        <td class="info">{{ user.email }}</td>
+                        <td class="botones">
+                            <button class="eliminar" data-id="modal-eliminar{{ user.id }}"><i class='bx bx-trash'></i></button>
+                            <button class="modificar" data-id="modal-modificar{{ user.id }}"><i class='bx bx-edit'></i></button>
+                        </td>
+                    </tr>
+                    <div id="modal-eliminar{{ user.id }}" class="modal">
+                        <div class="eliminar-modal">
+                            <span class="cerrar">&times;</span>
+                            <h2>¿Estás seguro que deseas eliminar este usuario?</h2>
+                            <div class="modal-botones">
+                                <form action="{% url 'eliminar_usuario' user.id  %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" class="confirmar-eliminar">Confirmar</button>
+                                </form>
+                                <button class="cancelar">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="modal-modificar{{ user.id  }}" class="modal">
+                        <div class="modal-contenido modificar-modal">
+                            <span class="cerrar">&times;</span>
+                            <h2>Modificar Usuario</h2>
+                            <form action="{% url 'modificar_usuario' user.id  %}" method="post" class="form_content">
+                                {% csrf_token %}
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" class="inputDate" id="nombre" name="nombre" value="{{ user.first_name }}">
+                                
+                                <label for="apellido">Apellido:</label>
+                                <input type="text" class="inputDate" id="apellido" name="apellido" value="{{ user.last_name }}">
+                                
+                                <label for="correo">Correo Electrónico:</label>
+                                <input type="email" class="inputDate" id="correo" name="correo" value="{{ user.email }}">
+                                
+                                <div class="modal-botones">
+                                    <button type="button" class="cancelar_md">Cancelar</button>
+                                    <button type="submit" class="guardar-modificacion">Guardar</button>
+                                </div>
+                                <div class="modal-botones">
+                                    <form method="post">
+                                        {% csrf_token %}
+                                        <button type="submit" formaction="{% url 'cambio_admin' user.id %}" class="cambio_contraseña"><i class='bx bx-refresh'></i>Reseteo de Contraseña</button>
+                                    </form>
+                                </div>
+                                    
+                                </form>
+                                </div>
+                            </form>
+                        </div>
+                    </div>                                 
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination">
+            <button class="anterior"><i class='bx bx-chevron-left'></i>Anterior</button>
+            <span class="pagina-inf">Página 1 de 3</span>
+            <button class="siguiente">Siguiente<i class='bx bx-chevron-right'></i></button>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/gestion.js' %}"></script>
+
+    <script src="{% static 'js/bucar.js' %}"></script>
+    
+    <script>
+        // Variables globales para el paginador
+        var currentPage = 1;
+        var rowsPerPage = 5; // Cambia este valor según tu preferencia
+        var table = document.querySelector('.tabla');
+        var rows = table.getElementsByTagName('tr');
+        var totalRows = rows.length;
+        var totalPages = Math.ceil(totalRows / rowsPerPage);
+    
+        // Función para mostrar las filas correspondientes a la página actual
+        function showRows(page) {
+            var start = (page - 1) * rowsPerPage;
+            var end = start + rowsPerPage;
+    
+            // Oculta todas las filas
+            for (var i = 1; i < rows.length; i++) { // Empezamos desde 1 para evitar ocultar la fila de encabezado
+                rows[i].style.display = 'none';
+            }
+    
+            // Muestra las filas de la página actual
+            for (var j = start + 1; j < Math.min(end + 1, totalRows); j++) { // Empezamos desde 1 para evitar mostrar la fila de encabezado
+                rows[j].style.display = '';
+            }
+    
+            // Actualiza el texto de la información de la página
+            var pageInfo = document.querySelector('.pagina-inf');
+            pageInfo.textContent = 'Página ' + currentPage + ' de ' + totalPages;
+        }
+    
+        // Función para ir a la página anterior
+        function goToPrevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                showRows(currentPage);
+            }
+        }
+    
+        // Función para ir a la página siguiente
+        function goToNextPage() {
+            if (currentPage < totalPages) {
+                currentPage++;
+                showRows(currentPage);
+            }
+        }
+    
+        // Mostrar la primera página al cargar la página
+        showRows(currentPage);
+    
+        // Event listeners para los botones de paginación
+        document.querySelector('.anterior').addEventListener('click', goToPrevPage);
+        document.querySelector('.siguiente').addEventListener('click', goToNextPage);
+    </script>
+    
+{% endblock %}

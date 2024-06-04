@@ -1,0 +1,47 @@
+{% extends 'plantilla.html' %}
+{% load static %}
+
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/cambio_admin.css' %}">
+    <!-- libreria de iconos boxicon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- libreria de google para el tipo de texto-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="forms">
+        <div class="form admin">
+            <h1 class="title">Cambio de Contraseña - Administrador</h1>
+            <form id="cambio-password-form" class="form-control-container" method="POST">
+                {% csrf_token %} <!-- Aquí se incluye el token CSRF -->
+                <div class="form-group">
+                    <label for="adminPassword" class="form-label">Contraseña de Administrador:</label>
+                    <input type="password" name="old_password" id="adminPassword" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="newPassword" class="form-label">Nueva Contraseña:</label>
+                    <input type="password" name="new_password1" id="newPassword" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword" class="form-label">Confirmar Nueva Contraseña:</label>
+                    <input type="password" name="new_password2" id="confirmPassword" class="form-control" required>
+                </div>
+                <button type="submit" class="button">Cambiar Contraseña</button>
+            </form>
+            <div class="message error-message" style="display: none;"></div>
+            <div class="message success-message" style="display: none;"></div>  
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/cambio_contraseña.js' %}"></script>
+<script src="{% static 'js/cambio_contra.js' %}"></script>
+{% endblock %}

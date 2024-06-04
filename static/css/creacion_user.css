@@ -1,0 +1,221 @@
+:root {
+
+
+    --gris-fondo:#F2F2F2;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--gris-fondo);
+    background-size: cover;
+    margin-top: 100px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fffffff3;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    width: 600px;
+    height: 600px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.card-info {
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card-info form {
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    margin-top: 10px;
+    width: 60%;
+    flex: content;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+h1 {
+    color: black;
+    font-size: 24px;
+    font-family: 'Protest Strike', sans-serif;
+    text-align: center;
+}
+
+.card-info label {
+    text-align: left;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.card-info .custom-input {
+    width: 100%; /* Establece el ancho de los inputs al 100% */
+    border-radius: 6px;
+    outline: none;
+    border: solid 1px #ddd;
+}
+
+.custom-input {
+    height: 40px;
+    width: 300px;
+}
+
+.card-info .custom-select {
+    width: 100%; /* Establece el ancho de los inputs al 100% */
+    margin-bottom: 10px;
+    border-radius: 6px;
+    outline: none;
+    border: solid 1px #ddd;
+}
+
+.custom-select {
+    height: 40px;
+    width: 500px;
+}
+
+.create_user {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.create_user .cancelar_md,
+.create_user .Crear_md {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.create_user .cancelar_md {
+    background-color: #ff4d4d;
+    border: solid 1px #ff4d4d;
+    color: #fff;
+}
+
+.create_user .Crear_md {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.create_user .cancelar_md:hover {
+    background-color: var(--blue-bayoux-300);
+    color: #ff4d4d;
+}
+
+.create_user .guardar-crear_md:hover {
+    background-color: #218838;
+}
+
+@media only screen and (max-width: 767px) {
+    .card {
+        background-color: #fff;
+        border-radius: 6px;
+        overflow: hidden;
+        width: 600px;
+        height: 600px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+    
+    .card-info {
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .card-info form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    form {
+        margin-top: 0px;
+        width: 80%;
+        flex: content;
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+    }
+    
+    h1 {
+        color: black;
+        font-size: 24px;
+        font-family: 'Protest Strike', sans-serif;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .card {
+        background-color: #fff;
+        border-radius: 6px;
+        overflow: hidden;
+        width: 300px;
+        height: 550px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+    
+    .card-info {
+        margin-top: 0px;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .card-info form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    form {
+        margin-top: 0px;
+        width: 80%;
+        flex: content;
+        font-family: 'Poppins', sans-serif;
+        font-size: 12px;
+    }
+    
+    h1 {
+        color: black;
+        font-size: 20px;
+        font-family: 'Protest Strike', sans-serif;
+        text-align: center;
+    }
+
+    .card-info .botoncalcular {
+        margin-top: 10px;
+        width: 100%; /* Establece el ancho de los inputs al 100% */
+    }
+}

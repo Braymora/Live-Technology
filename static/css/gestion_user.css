@@ -1,0 +1,723 @@
+/* Variables CSS */
+:root {
+    --blue-bayoux-50: #f5f8fa;
+    --blue-bayoux-100: #e9eff5;
+    --blue-bayoux-200: #cfdde8;
+    --blue-bayoux-600: #3b6381;
+    --blue-bayoux-700: #345670;
+    --blue-bayoux-800: #0b3d93;
+    --blue-bayoux-900: #122754;
+    --blue-bayoux-950: #080d28;
+
+    --gris-fondo:#F2F2F2;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--gris-fondo);
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh;
+}
+
+
+.contenedor {
+    max-width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fffffff3;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Protest Strike', sans-serif;
+}
+
+/* Estilos para el buscador */
+.buscador {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0px;
+}
+
+.buscador input {
+    flex: 0 1 auto;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid  #ddd;;
+}
+
+.buscador-btn {
+    padding: 10px 20px;
+    background: linear-gradient(to bottom right,#1B233D, #049FBB, #50F6FF);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+    height: 40px;
+}
+
+.buscador-btn:hover {
+    background-color: var(--blue-bayoux-200);
+    color: var(--blue-bayoux-900);
+}
+
+/* Estilos para la lista de usuarios */
+.user-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.user {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-info h2 {
+    margin: 0;
+}
+
+.user-info p {
+    margin: 5px 0;
+}
+
+/* Estilos para las acciones de usuario */
+.user-actions {
+    margin-top: 10px;
+}
+
+.user-actions button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilos para la paginación */
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+.anterior,
+.siguiente {
+    padding: 10px 20px;
+    background: linear-gradient(to bottom right,#1B233D, #049FBB, #50F6FF);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 5px;
+    transition: all 0.2s;
+}
+.pagina-inf{
+    font-size: 14px;
+}
+
+.anterior:hover,
+.siguiente:hover {
+    background: linear-gradient(to bottom right, #049FBB, #50F6FF);
+    color: var(--blue-bayoux-900);
+    transform: scale(1.04);
+}
+
+
+.add-user-btn {
+    padding: 10px 20px;
+    background-color: turquoise;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-items: center;
+    text-decoration: none;
+    height: 40px;
+}
+
+.add-user-btn img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.add-user-btn:hover {
+    background-color: rgb(23, 59, 56);
+}   
+
+
+/* Estilos para la tabla de usuarios */
+.tablecontain {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.tabla {
+    border-collapse: collapse;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.info{
+    padding: 10px;
+}
+
+.tabla td{
+    border: 1px solid #ddd;
+}
+
+.tabla th {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+.tabla td button {
+    padding: 5px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+}
+
+.tabla td .eliminar {
+    background-color: #ff4d4d;
+    border: solid 1px #ff4d4d;
+    color: #fff;
+}
+
+.tabla td .eliminar:hover {
+    background-color: var(--blue-bayoux-300);
+    color: #ff4d4d;
+}
+
+.tabla td .modificar {
+    background: linear-gradient(to bottom right,#1B233D, #049FBB, #50F6FF);
+    color: #fff;
+}
+
+.tabla td .modificar:hover {
+    background: linear-gradient(to bottom right,#1B233D, #049FBB, #50F6FF);
+    color: var(--blue-bayoux-900);
+}
+
+.botones {
+    padding: 5px;
+    text-align: center;
+}
+
+
+/* Estilos para la separacion iconos libreria */
+/* Estilos para los iconos dentro de los botones */
+.add-user-btn i,
+.eliminar,
+.modificar {
+    display: inline-flex;
+    align-items: center;
+}
+
+.anterior i,
+.siguiente i {
+    margin-right: 5px;
+}
+
+.add-user {
+    position: absolute;
+    right: 5%;
+}
+
+/* Estilos para los modales */
+.modal {
+    font-family: 'Poppins', sans-serif;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+
+}
+
+.eliminar-modal {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 50%;
+    height: auto;
+    overflow-y: auto;
+    position: relative;
+    margin: auto;
+    margin-top: 10%;
+}
+
+.eliminar-modal h2 {
+    text-align: center;
+    font-family: 'Protest Strike', sans-serif;
+}
+
+.modal-contenido {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 15px; /* Reducción del padding */
+    border-radius: 8px; /* Reducción del radio del borde */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); /* Reducción de la intensidad de la sombra */
+    max-width: 50%; /* Ajuste del ancho máximo */
+    margin: auto;
+    margin-top: 20px; /* Ajuste del margen superior */
+}
+
+.modal-contenido h2 {
+    text-align: center;
+    font-family: 'Protest Strike', sans-serif;
+}
+
+.form_content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre elementos */
+    padding: 8px; /* Reducción del padding */
+}
+
+.form_content label {
+    font-weight: bold;
+}
+
+.inputDate {
+    
+    padding: 12px; 
+    margin-bottom: 12px;   
+}
+
+.form_content .inputDate:focus,
+.selectDate:focus {
+    border-color: var(--blue-bayoux-700); /* Cambio de color al enfocar */
+}
+/* Estilos para el botón de cerrar */
+.cerrar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #333;
+    font-size: 20px;
+    /* Tamaño del icono */
+}
+
+/* Estilos para los botones dentro del modal */
+.modal-botones {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.modal-botones .confirmar-eliminar {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #ff4d4d;
+    border: solid 1px #ff4d4d;
+    color: #fff;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.modal-botones .cancelar {
+   
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #28a745;
+    color: #fff;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+
+}
+
+.modal-botones .confirmar-eliminar:hover {
+    background-color: var(--blue-bayoux-300);
+    color: #ff4d4d;
+
+
+}
+
+.modal-botones .cancelar:hover {
+    background-color: #218838;
+
+}
+
+.modal-botones .cancelar_md {
+    padding: 10px 20px;
+    /* Espaciado interno */
+    margin: 0 10px;
+    /* Espaciado externo */
+    border: none;
+    /* Quitar el bord   e */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    cursor: pointer;
+    /* Mostrar el cursor como puntero */
+    background-color: #FF8C00;
+    ;
+    /* Color de fondo */
+    color: #fff;
+    /* Color del texto */
+    font-size: 16px;
+    /* Tamaño del texto */
+    transition: background-color 0.3s ease;
+    /* Transición suave al pasar el ratón */
+}
+
+.modal-botones .cancelar_md:hover {
+    background-color: #FFB347;
+}
+
+/* Estilos para el botón de guardar-modificacion y cambio_contraseña */
+.modal-botones .guardar-modificacion,
+.modal-botones .cambio_contraseña {
+    padding: 10px 20px;
+    margin: 10px;
+    /* Ajustar el margen externo para separar los botones */
+    border: none;
+    border-radius: 8px;
+    /* Hacer los bordes más esquinados */
+    cursor: pointer;
+    background-color: var(--blue-bayoux-700);
+    color: #fff;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+/* Estilo específico para los botones dentro del modal */
+.modal-botones button,
+.modal-botones a {
+    padding: 10px 20px;
+    margin-top: 20px;
+    /* Ajustamos el margen superior para separar los botones */
+    border: none;
+    border-radius: 8px;
+    /* Hacemos los bordes más esquinados */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-botones .guardar-modificacion:hover,
+.modal-botones .cambio_contraseña:hover {
+    background-color: var(--blue-bayoux-200);
+    color: var(--blue-bayoux-900);
+}
+
+/* Estilos para el formulario */
+.form_content {
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form_content label {
+    margin-bottom: 5px;
+}
+
+.form_content input[type="email"],
+.form_content select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Protest Strike', sans-serif;
+}
+
+.form_content input[type="email"]:focus,
+.form_content select:focus {
+    border-color: var(--blue-bayoux-700);
+}
+
+.form_content input[type="email"]::placeholder,
+.form_content select::placeholder {
+    color: #999;
+}
+
+.form_content input[type="email"]:focus::placeholder,
+.form_content select:focus::placeholder {
+    color: transparent;
+}
+
+@media only screen and (max-width: 750px) {
+
+    .contenedor {
+        max-width: 90%;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fffffff3;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        position: relative;
+        /* Establecer posición relativa */
+    }
+
+    /* Estilos para la paginación */
+    .pagination {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .prev-btn,
+    .next-btn,
+    .anterior,
+    .siguiente {
+        padding: 8px 16px;
+        background-color: var(--blue-bayoux-700);
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin: 0 5px;
+        font-size: 14px;
+        /* Ajuste del tamaño de fuente */
+    }
+
+    .prev-btn:hover,
+    .next-btn:hover,
+    .anterior:hover,
+    .siguiente:hover {
+        background-color: var(--blue-bayoux-200);
+        color: var(--blue-bayoux-900);
+        transform: scale(1.04);
+    }
+
+    /* Estilos para el botón de añadir usuario */
+    .add-user {
+        margin-left: 0px;
+    }
+
+    .add-user-btn {
+        padding: 8px 16px;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        /* Ajuste del tamaño de fuente */
+    }
+
+    .add-user-btn img {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+        /* Reducción del espacio entre el icono y el texto */
+    }
+
+    .add-user-btn:hover {
+        background-color: #218838;
+    }
+
+    /* Estilos para los modales */
+    .modal {
+        font-family: 'Poppins', sans-serif;
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        width: 100%;
+        height: 100%;
+    }
+
+    .eliminar-modal,
+    .modal-contenido {
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        max-width: 80%;
+        overflow-y: auto;
+        position: relative;
+        margin: auto;
+        margin-top: 10%;
+    }
+
+    .eliminar-modal h2,
+    .modal-contenido h2 {
+        text-align: center;
+        font-family: 'Protest Strike', sans-serif;
+    }
+
+    .form_content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 8px;
+    }
+
+    .form_content .inputDate,
+    .selectDate {
+        border: solid 1px #ddd;
+        padding: 10px;
+        outline: none;
+        border-radius: 6px;
+        font-size: 14px;
+        /* Ajuste del tamaño de fuente */
+    }
+
+    /* Estilos para el botón de cerrar */
+    .cerrar {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        color: #333;
+        font-size: 20px;
+    }
+}
+
+
+
+@media only screen and (max-width: 400px) {
+    h1 {
+        font-size: 1.5em; 
+        margin-block-start: 0.5em;
+        margin-block-end: 0.5em; 
+    }
+        .contenedor {
+
+            margin: 6em 1em;
+            padding: 14px; 
+        }
+
+    .buscar {
+        width: calc(100% - 20px);
+        /* Ancho del campo de búsqueda */
+        margin-bottom: 10px;
+        /* Espacio inferior */
+    }
+
+    .buscador-btn {
+        margin-left: 0;
+    }
+
+    .add-user {
+        top: 84px;
+        /* Ajustar la posición del botón de añadir usuario */
+        right: 1px;
+        /* Ajustar la posición del botón de añadir usuario */
+        margin-left: 0;
+    }
+
+    .add-user-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    .add-user-btn {
+        padding: 10px 20px;
+      
+        font-size: 12px;
+       
+    }
+
+    .tabla th {
+        font-size: 12px;
+    }
+    .tabla td{
+    font-size: 12px;
+    }
+    .pagination {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .anterior,
+    .siguiente{
+        padding: 4px 8px;
+        background-color: var(--blue-bayoux-700);
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin: 0 2px;
+        font-size: 12px;  
+    }
+    .pagina-inf{
+        font-size: 12px;
+    }
+    .eliminar-modal,
+    .modal-contenido {
+        padding: 20px;
+        max-width: 90%;
+        margin-top: 10%;
+    }
+
+    .cerrar {
+        top: 5px;
+        right: 5px;
+        font-size: 16px;
+    }
+
+    .form_content .inputDate,
+    .selectDate {
+        padding: 8px;
+        font-size: 12px;
+    }
+}

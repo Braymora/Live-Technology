@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creación de Usuario</title>
+
+    <link rel="stylesheet" href="{% static 'css/creacion_user.css' %}">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-info">
+                <form method="post">
+                    {% csrf_token %}
+                    <h1>Creación de Usuario</h1>
+                    {% if error_message %}
+                    <p class="error-message">{{ error_message }}</p>
+                    {% endif %}
+                    <label for="usuario">usuario</label>
+                    <input type="text" id="usuario" name="usuario" class="custom-input" placeholder="ingrese nombre de usuario" required>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" class="custom-input" placeholder="Ingrese nombre" required>
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" class="custom-input" placeholder="Ingrese apellido" required>
+                    <label for="correo_electronico">Correo Electrónico:</label>
+                    <input type="email" id="correo_electronico" name="correo_electronico" class="custom-input" placeholder="Ingrese correo electrónico" required>
+                    <label for="contrasena">Contraseña:</label>
+                    <input type="password" id="contrasena" name="contrasena" class="custom-input" placeholder="Ingrese contraseña" required>
+                    <label for="tipo_usuario">Tipo de Usuario:</label>
+                    <select id="tipo_de_usuario" name="tipo_usuario" class="custom-select" required>
+                        <option value=""></option>
+                        <option value="True">Administrador</option>
+                        <option value="False">Normal</option>
+                    </select>                    
+                    <div class="create_user">
+                        <button type="submit" class="Crear_md">Crear</button>
+                        <button type="button" class="cancelar_md" data-url="{% url 'gestor_user' %}">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/creacion_user.js' %}"></script>
+</body>
+</html>

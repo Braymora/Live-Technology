@@ -6,5 +6,5 @@ class Cursos(models.Model):
     nombre = models.CharField(max_length=255)  # Campo de texto para el nombre
     descripcion = models.TextField()  # Campo de texto para la descripción
     imagen = models.TextField(default='hola')
-    precio = models.DecimalField(max_digits=10, decimal_places=2)  # Campo decimal para el precio
+    precio = models.IntegerField()  # Campo decimal para el precio
  # Para representar el curso por su nombre

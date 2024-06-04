@@ -29,6 +29,7 @@
             <div class="curso-info">
                 <h3>{{ cursito.nombre }}</h3>
                 <p>{{ cursito.descripcion }}</p>
+                <p>{{cursito.precio}}</p>
             </div>
             </a>
         </div>
@@ -58,11 +59,13 @@
             curso.addEventListener('click', function() {
                 const nombre = curso.getAttribute('data-nombre');
                 const descripcion = curso.getAttribute('data-descripcion');
+                const precio = curso.getAttribute('data-precio');
                 const imagen = curso.querySelector('img').getAttribute('src');
     
                 // Almacena cada dato en el localStorage con claves separadas
                 localStorage.setItem('cursoNombre', nombre);
                 localStorage.setItem('cursoDescripcion', descripcion);
+                localStorage.setItem('cursoPrecio', precio);
                 localStorage.setItem('cursoImagen', imagen);
             });
         });
